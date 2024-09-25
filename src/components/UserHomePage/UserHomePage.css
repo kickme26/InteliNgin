@@ -1,0 +1,23 @@
+.user-details-card {
+    margin: 20px;
+    padding: 20px;
+}
+
+.user-details-card .ant-card-head {
+    background-color: #007bff; /* Your desired background color */
+    color: aliceblue;           /* Text color */
+    font-style: normal;         /* Font style */
+    font-size: medium;        /* Font size */
+}
+.disabled-button {
+    background-color: #d9d9d9; /* Light grey background */
+    color: #bfbfbf; /* Grey text color */
+    border: 1px solid #d9d9d9; /* Light grey border */
+    cursor: not-allowed; /* Not allowed cursor */
+  }
+  
+  .disabled-button:hover {
+    background-color: #d9d9d9; /* Maintain grey on hover */
+    color: #bfbfbf; /* Maintain grey text on hover */
+  }
+  
