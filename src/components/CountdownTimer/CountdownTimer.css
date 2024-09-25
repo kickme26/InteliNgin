@@ -1,0 +1,20 @@
+/* CountdownTimer.css */
+.countdown-timer-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* White background for the box */
+    border: 1px solid #dcdcdc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .countdown-label {
+    margin-right: 10px; /* Space between label and timer */
+    font-weight: bold; /* Make label bold */
+  }
+  
+  .countdown-time {
+    font-size: 18px; /* Slightly larger font for the timer */
+    font-family: monospace; /* Use monospace font for time display */
+  }
+  

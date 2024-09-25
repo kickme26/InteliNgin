@@ -1,0 +1,39 @@
+/* src/components/ProfileAvatar/ProfileAvatar.css */
+
+/* Container for the profile avatar and name */
+.profile-avatar-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Ensure the cursor shows as a pointer to indicate interactivity */
+  }
+  
+  /* Style for the profile name */
+  .profile-name {
+    color: #1677ff; /* Profile name color */
+    margin-left: 8px; /* Space between name and avatar */
+    font-weight: bold; /* Make the name bold */
+  }
+  
+  /* Style for the profile avatar */
+  .profile-avatar {
+    background-color: #f0f0f0; /* Optional: Background color for avatar */
+    border: 2px solid #1677ff; /* Optional: Border color for avatar */
+  }
+  
+  /* Ensure dropdown menu aligns properly */
+  .ant-dropdown {
+    z-index: 1000; /* Ensure dropdown is on top of other elements */
+  }
+  /* src/components/ProfileAvatar/ProfileAvatar.css */
+
+.profile-avatar-container {
+  cursor: pointer;
+}
+
+.profile-avatar {
+  background-color: #f56a00; /* You can change this color */
+}
+
+.profile-name {
+  color: #fff; /* Adjust the text color */
+}

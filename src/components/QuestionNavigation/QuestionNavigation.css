@@ -1,0 +1,17 @@
+/* QuestionNavigation.css */
+.question-navigation {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Ensure vertical scrolling if content overflows */
+    max-height: calc(100vh - 100px); /* Adjust height to fit within the Sider */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Optional: Style for buttons to improve appearance */
+  .question-navigation .ant-btn {
+    margin: 4px;
+    font-size: 12px; /* Small button size */
+    height: 24px; /* Adjust height */
+  }
+  

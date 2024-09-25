@@ -1,0 +1,65 @@
+.mcq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.question-cards {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 1 20%; /* 20% of the total height */
+}
+
+.body-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 1 35%; /* 35% of the total height */
+}
+
+.answer-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 1 45%; /* 45% of the total height (remaining space) */
+  display: flex;
+  flex-direction: column;
+}
+
+.answer-card .ant-radio {
+  margin-bottom: 10px; /* Space between radio buttons */
+}
+
+
+.question-title {
+  font-size: 16px; /* Slightly smaller font size for the title */
+  font-weight: bold;
+  color: black;
+}
+
+.question-body {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}

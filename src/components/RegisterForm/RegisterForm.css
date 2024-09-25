@@ -1,0 +1,122 @@
+/* Reset margin and padding */
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Wrapper for the login page */
+.auth-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%; /* 10% gap on left and right */
+  overflow: hidden; /* Hide overflow to avoid scrollbars on the container */
+  background-color: #f5f5f5; /* Light background for contrast */
+}
+/* Background for the floating balls */
+.auth-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* General style for the floating balls */
+.auth-bg .r {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Floating gradient balls */
+.auth-bg .r:nth-child(1) { width: 300px; height: 300px; top: -100px; right: -100px; background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%); animation: floating 7s infinite; }
+.auth-bg .r:nth-child(2) { width: 150px; height: 150px; top: 114px; right: 115px; background: #04a9f5; animation: floating 8s infinite; }
+.auth-bg .r:nth-child(3) { width: 100px; height: 100px; left: 259px; bottom: 400px; background: #1de9b6; animation: floating 6s infinite; }
+.auth-bg .r:nth-child(4) { width: 250px; height: 250px; left: 450px; bottom: 205px; background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%); animation: floating 5s infinite; }
+
+@keyframes floating {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Styles for the register form */
+.register-page {
+  position: relative;
+  z-index: 1; /* Ensure it is above the background */
+  padding: 40px;
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  width: 400px;
+  max-width: 100%;
+  max-height: 80vh; /* Limit the height of the form */
+  overflow-y: auto; /* Add vertical scrolling */
+  box-shadow: none; /* Removed shadow as requested */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for contrast */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form items */
+  text-align: left;
+}
+
+/* Removed box shadows */
+.register-page {
+  box-shadow: none;
+}
+
+/* Added padding for form inputs */
+.ant-form-item {
+  margin-bottom: 15px;
+}
+
+.ant-form-item-label > label {
+  font-weight: bold;
+  color: #000;
+}
+
+.ant-input, .ant-select-selector, .ant-radio-group {
+  color: #000;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ant-input:focus, .ant-select-selector:focus, .ant-radio-group:focus {
+  border-color: #1677ff;
+  box-shadow: 0 0 6px rgba(22, 119, 255, 0.5);
+}
+
+/* Button styling */
+.ant-btn-primary {
+  background-color: #1677ff;
+  border-color: #1677ff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.ant-btn-primary:hover {
+  background-color: #0050b3;
+  border-color: #0050b3;
+}
+
+/* Center the form in the container */
+.register-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+h3.mb-4 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}

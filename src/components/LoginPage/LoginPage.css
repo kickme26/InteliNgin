@@ -1,0 +1,164 @@
+/* Reset margin and padding */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    background-color: beige;
+}
+/* Wrapper for the login page */
+.auth-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to avoid scrollbars */
+    padding: 30px 15px;
+}
+
+/* Background for the floating balls */
+.auth-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place behind the form */
+}
+
+/* General style for the floating balls */
+.auth-bg .r {
+    position: absolute;
+    border-radius: 50%;
+}
+/* Large gradient balls */
+.auth-bg .r:nth-child(1) {
+    width: 350px;
+    height: 350px;
+    top: -120px; /* Higher */
+    right: -120px; /* Further to the right */
+    background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+    animation: floating 7s infinite;
+}
+.auth-bg .r:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    top: 120px;
+    right: 120px;
+    background: #04a9f5;
+    animation: floating 8s infinite;
+}
+
+.auth-bg .r:nth-child(3) {
+    width: 120px;
+    height: 120px;
+    left: 250px;
+    bottom: 450px;
+    background: #1de9b6;
+    animation: floating 6s infinite;
+}
+
+.auth-bg .r:nth-child(4) {
+    width: 280px;
+    height: 280px;
+    left: 450px;
+    bottom: 220px;
+    background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
+    animation: floating 5s infinite;
+}
+
+
+
+/* Animation for the floating effect */
+@keyframes floating {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(10px, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Styles for the login form */
+.login-page {
+    position: relative;
+    z-index: 1; /* Ensure it is above the background */
+    padding: 60px 50px; /* Increase padding for a bigger content box */
+    max-width: 500px; /* Set a width limit */
+    width: 100%; /* Allow responsiveness */
+    backdrop-filter: blur(15px);
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.85); /* More visible background */
+}
+
+/* Form alignment */
+.ant-form-item {
+    text-align: center; /* Center the form items */
+}
+
+.ant-input,
+.ant-input-password,
+.ant-btn {
+    font-size: 16px; /* Larger input and button font size */
+    padding: 10px;
+}
+
+.ant-form-item-label > label {
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+}
+
+.ant-btn-primary {
+    width: 100%;
+    height: 45px;
+    background-color: #1677ff;
+    border-color: #8b3d0f;
+}
+
+.ant-btn-primary:hover {
+    background-color: #0050b3;
+    border-color: #0050b3;
+}
+
+/* Muted text for signup prompt */
+.text-muted {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text-muted a {
+    color: #1677ff;
+    text-decoration: none;
+}
+
+.text-muted a:hover {
+    color: #0050b3;
+    text-decoration: underline;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.text-muted {
+    color: #6c757d; /* Light muted text */
+    font-size: 14px;
+    margin-top: 15px; /* Add some space between form and the text */
+    text-align: center; /* Center the text */
+}
+
+.text-muted a {
+    color: #1677ff; /* Link color matching button */
+    text-decoration: none;
+}
+
+.text-muted a:hover {
+    color: #0050b3; /* Hover color for the link */
+    text-decoration: underline;
+}

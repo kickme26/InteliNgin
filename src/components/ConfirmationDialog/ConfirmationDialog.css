@@ -1,0 +1,33 @@
+/* src/components/ConfirmationDialog/ConfirmationDialog.css */
+
+/* Ensure the Cancel button is visible and styled */
+.ant-modal-footer {
+    display: flex;
+    justify-content: space-between; /* Ensure space between buttons */
+  }
+  
+  .ant-btn {
+    visibility: visible !important; /* Ensure buttons are visible */
+    opacity: 1 !important; /* Ensure buttons are fully opaque */
+  }
+  
+  .ant-btn-default {
+    color: #1677ff; /* Set Cancel button text color to blue */
+    border-color: #1677ff; /* Optional: Set border color to match text color */
+  }
+  
+  .ant-btn-default:hover {
+    color: #0050b3; /* Darker blue color on hover */
+    border-color: #0050b3; /* Optional: Set border color to match hover text color */
+  }
+  
+  .ant-btn-primary {
+    background-color: #1677ff; /* Customize primary button color */
+    border-color: #1677ff; /* Customize primary button border color */
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #0050b3; /* Darker shade on hover */
+    border-color: #0050b3; /* Customize primary button hover border color */
+  }
+  

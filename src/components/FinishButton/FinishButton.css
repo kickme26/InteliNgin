@@ -1,0 +1,31 @@
+.linearGradientButton {
+    border-width: 0;
+    position: relative;
+    color: #fff; /* Ensure text color is white by default */
+    font-weight: bold; /* Optional: Make text bold */
+}
+
+.linearGradientButton::before {
+    content: '';
+    background: linear-gradient(135deg, #6253e1, #04befe);
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transition: all 0.3s;
+    border-radius: inherit;
+    z-index: -1; /* Place behind text */
+}
+
+.linearGradientButton:hover::before {
+    background: linear-gradient(135deg, #11f16e, #35ff9a); /* Change gradient color on hover */
+    opacity: 0.8; /* Slightly change opacity on hover for effect */
+}
+
+.ant-btn {
+    margin: 0 8px; /* Space between buttons if there are multiple */
+}
+
+.ant-btn-primary {
+    border-radius: 4px; /* Optional: round corners */
+    color: #fff; /* Ensure text color is white by default */
+}

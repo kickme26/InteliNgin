@@ -1,0 +1,155 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.layout-header {
+    background: linear-gradient(90deg, #ffffff 80%, #dcdcdc 20%);
+    color: #000;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 64px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-timer {
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.header-label {
+    justify-content: center;
+}
+
+.header-avatar {
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.header-label-text {
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Countdown Timer Styles */
+.countdown-timer-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+.countdown-label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.countdown-time {
+    font-size: 18px;
+    font-family: monospace;
+}
+
+/* Sider Styles */
+.layout-sider {
+    background-color: #1677ff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    position: relative;
+    overflow: hidden; /* Ensure no overflow from the Sider itself */
+    height: 100vh;
+    width: 280px; /* Increased width */
+}
+
+/* Ensure Sider content fits and is scrollable */
+.question-navigation {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    padding: 10px;
+    box-sizing: border-box;
+    height: calc(100vh - 80px); /* Calculate height to fit within the Sider */
+    min-height: 60%; /* Ensure it takes up at least 60% of Sider height */
+}
+
+.finish-button {
+    position: absolute;
+    bottom: 20px; /* Space from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    margin: 0;
+    z-index: 1; /* Ensure it is above other content */
+    height: 50px; /* Adjust the height of the button */
+    width: 100px; /* Ensure a fixed width for the button */
+    min-height: 20%; /* Ensure it takes up at least 20% of Sider height */
+}
+
+/* Content and Footer styles */
+.layout-content {
+    background-color: #0958d9;
+    color: #fff;
+    padding: 20px;
+    overflow: auto;
+    flex-grow: 1;
+    /*margin-left: 280px;  Adjust margin to match the new Sider width */
+}
+
+.layout-footer {
+    background-color: #f1f1f1;
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0;
+    font-size: small;
+}
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-sider {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Allow height to adjust automatically */
+        position: relative; /* Adjust position for smaller screens */
+    }
+    
+    .layout-content {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .layout-header {
+        grid-template-columns: 1fr; /* Stack items vertically on small screens */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .header-item {
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .question-navigation {
+        height: auto; /* Auto height on smaller screens */
+        max-height: none; /* Allow full height if needed */
+    }
+}
