@@ -190,8 +190,8 @@ const AdminPage = ({ onLogout }) => {
               extra={
                 <Radio.Group onChange={handleFilterChange} defaultValue="all">
                   <Radio.Button value="all">All</Radio.Button>
-                  <Radio.Button value="online">ONLINE</Radio.Button>
-                  <Radio.Button value="store">STORES</Radio.Button>
+                  <Radio.Button value="online">TODAY</Radio.Button>
+                  <Radio.Button value="store">TOMORROW</Radio.Button>
                 </Radio.Group>
               }
             >

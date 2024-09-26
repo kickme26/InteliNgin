@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Layout, Input, Button } from 'antd';
 import ProfileAvatar from '../ProfileAvatar/ProfileAvatar';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
@@ -7,18 +7,19 @@ import './ChatPage.css';
 const { Header, Footer, Content } = Layout;
 
 const ChatPage = () => {
-  const [messages, setMessages] = useState([
-    { text: 'Welcome to the chat! How can I assist you today?', sender: 'system' }
-  ]);
+  const [messages, setMessages] = useState([{ text: 'Welcome to the chat! How can I assist you today?', sender: 'system' }]);
   const [input, setInput] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleSend = async () => {
     if (input.trim()) {
       const userMessage = { text: input, sender: 'user' };
-      setMessages([...messages, userMessage]);
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
+      setInput('');
+
+      setIsTyping(true);
       const response = await getResponseFromBackend(input);
       simulateTyping(response);
-      setInput('');
     }
   };
 
@@ -32,64 +33,57 @@ const ChatPage = () => {
         body: JSON.stringify({ input: userInput }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.statusText}`);
-      }
-
       const data = await response.json();
-      return data.response || "Sorry, there was an error processing your request.";
+      return data.response || 'Sorry, there was an error processing your request.';
     } catch (error) {
-      return "Sorry, there was an error processing your request.";
+      return 'Sorry, there was an error processing your request.';
     }
   };
 
   const simulateTyping = (response) => {
     const typingDelay = Math.min(Math.max(response.length * 50, 2000), 8000);
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: '', sender: 'system', isTyping: true }
-    ]);
 
     setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages.slice(0, -1),
-        { text: response, sender: 'system' }
-      ]);
+      setMessages((prevMessages) => [...prevMessages, { text: response, sender: 'system' }]);
+      setIsTyping(false);
     }, typingDelay);
   };
 
   return (
     <Layout className="layout">
-      <Header className="layout-header">
-        <div className="header-item header-timer">
-          <CountdownTimer />
-        </div>
-        <div className="header-item header-label">
-          <span className="header-label-text">Level 2: AI-Powered Tech Interview - Typing Challenges Await!</span>
-        </div>
-        <div className="header-item header-avatar">
-          <ProfileAvatar name={sessionStorage.getItem('username')} />
-        </div>
-      </Header>
+        <Header className="layout-header">
+          <div className="header-item header-timer">
+            <CountdownTimer />  {/* Timer component */}
+          </div>
+          <div className="header-item header-label">
+            <span className="header-label-text">Tech Round with Ms.Lolita AI</span>
+          </div>
+          <div className="header-item header-avatar">
+            <ProfileAvatar name={sessionStorage.getItem('username')} />
+          </div>
+        </Header>
       <Content className="layout-content">
-        <div className="chat-background">{/* This will now display the background image */}
-          
-          {/* Floating balls */}
+        <div className="chat-background">
           <div className="floating-ball large" />
           <div className="floating-ball small" />
         </div>
         <div className="chat-container">
           <div className="chat-content">
-            <div className="chat-messages">
-              {messages.map((msg, index) => (
-                <div
-                  key={index}
-                  className={`chat-message ${msg.sender === 'user' ? 'user-message' : 'system-message'}`}
-                >
-                  {msg.text}
-                </div>
-              ))}
-            </div>
+            {messages.map((msg, index) => (
+              <div key={index} className={`chat-message ${msg.sender === 'user' ? 'user-message' : 'system-message'}`}>
+                {msg.text}
+              </div>
+            ))}
+            {isTyping && (
+  <div className="typing-indicator">
+
+    <div className="dots">
+      <span className="dot"></span>
+      <span className="dot"></span>
+      <span className="dot"></span>
+    </div>
+  </div>
+)}
           </div>
           <div className="chat-input-container">
             <Input
@@ -98,14 +92,8 @@ const ChatPage = () => {
               onPressEnter={handleSend}
               placeholder="Type a message..."
               className="chat-input"
-              size="large" // Larger input box
             />
-            <Button
-              type="primary"
-              onClick={handleSend}
-              className="chat-send-button"
-              size="small" // Smaller button
-            >
+            <Button type="primary" onClick={handleSend} className="chat-send-button">
               Send
             </Button>
           </div>
