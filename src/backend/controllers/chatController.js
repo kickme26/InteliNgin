@@ -2,6 +2,9 @@
 const { getChatResponse: getChatResponseFromService } = require('../services/groqService');
 
 async function handleChatResponse(req, res) {
+
+
+  
   const { input } = req.body;
   console.log('Received user input in controller:', input);
 

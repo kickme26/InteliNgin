@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "jobRole": "Java Developer",
+      "noOfVacancies": 3,
+      "jobDescription": "Develop and maintain Java applications.",
+      "salaryPackage": "$80,000",
+      "experienceRequired": 3,
+      "skillsRequired": "Java, Spring Boot",
+      "candidatesApplied": 45
+    },
+    {
+      "id": 2,
+      "jobRole": "Frontend Developer",
+      "noOfVacancies": 5,
+      "jobDescription": "Develop responsive web applications.",
+      "salaryPackage": "$75,000",
+      "experienceRequired": 2,
+      "skillsRequired": "React, HTML, CSS",
+      "candidatesApplied": 25
+    }
+  ]
+  

@@ -19,7 +19,7 @@ const getChatResponse = async (userInput) => {
       previousUserInput.add(userInput);
     }
 
-    // Prepare the messages for the GROQ API
+    // Prepare the messages for the GROQ API @TODO: 
     const messages = [
       {
         role: 'system',

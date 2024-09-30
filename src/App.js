@@ -9,6 +9,7 @@ import RegisterForm from './components/RegisterForm/RegisterForm';
 import RegisterSuccessful from './components/RegisterForm/RegisterSuccessful';
 import UserHomePage from './components/UserHomePage/UserHomePage';
 import UserDetailsPage from './components/UserDetailsPage/UserDetailsPage';
+import AdminJobPost from './components/AdminPage/AdminJobPost';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route path="/admin" element={username && role === 'admin' ? <AdminPage onLogout={handleLogout} /> : <Navigate to="/login" replace />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
           <Route path="/user/:userId" element={<UserDetailsPage />} />
+          <Route path="/jobpost" element={<AdminJobPost />} />
         </Routes>
       </div>
     </Router>

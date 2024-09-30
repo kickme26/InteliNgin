@@ -1,11 +1,37 @@
 .user-details-card {
-    margin: 20px;
-    padding: 20px;
-}
+    margin-bottom: 20px;
+  }
+  
+  .user-info-card {
+    margin-bottom: 20px;
+  }
+  
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .interview-process, .interview-details, .interview-schedule {
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .left-column, .right-column {
+      width: 100%; /* Full width on mobile */
+    }
+  }
 
-.user-details-card .ant-card-head {
-    background-color: #007bff; /* Your desired background color */
-    color: aliceblue;           /* Text color */
-    font-style: normal;         /* Font style */
-    font-size: medium;        /* Font size */
-}
+  .interview-Add-Interview{
+    display: block;
+    height: 45px;
+    background-color: #1677ff;
+    border-color: #8b3d0f;
+
+  }
+  

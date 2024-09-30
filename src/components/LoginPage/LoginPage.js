@@ -12,25 +12,36 @@ const LoginPage = ({ setUsername }) => {
     const { username, password } = values;
 
     try {
-      const response = await fetch('http://localhost:5000/api/login/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      //const response = await fetch("http://localhost:5000/api/login/login", {
+      const response = await fetch(
+        "http://superkingsoft.com/demo/crud_api/user.php?action=validateUser",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       const data = await response.json();
+      console.log("data: " + JSON.stringify(data));
 
-      if (response.ok) {
+      //if (response.ok) {
+      if (data.message === "success") {
+        localStorage.setItem("username",data.username);
+        localStorage.setItem("role",data.role);
         setUsername(username, data.role);
-        if (data.role === 'admin') {
-          navigate('/admin');
+        if (data.role === "admin") {
+          navigate("/admin");
         } else {
           navigate(`/userhome/${encodeURIComponent(username)}`);
         }
-      } 
-    } catch (error) {
+      }
+      else{
+        alert("Invalid Username or Password");
+      }
+    }  catch (error) {
       console.error('Login error:', error);
       message.error('An error occurred during login');
     } finally {
