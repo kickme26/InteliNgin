@@ -1,0 +1,41 @@
+{
+    "data": {
+      "name": "thor",
+      "mobile_number": "+919566258767",
+      "email": "gdman@gmail.com",
+      "address": "123 Main St, Cityville, ST, 12345",
+      "dob": "1998-01-26",
+      "apply_for_role": "Jr Software Developer",
+      "source_of_interview": "LinkedIn",
+      "is_fresher": true,
+      "is_experienced": false,
+      "years_of_experience": 0,
+      "ug_degree_name": "Bachelor of Technology",
+      "ug_completed_year": 2019,
+      "ug_mark_percent": 85.0,
+      "twelvth_completed_year": 2015,
+      "twelvth_mark_percent": 90.0,
+      "tenth_completed_year": 2013,
+      "tenth_mark_percent": 95.0,
+      "passport_number": "A12345678",
+      "aadhar_number": "1234-5678-9012",
+      "current_interview_level": "registered",
+      "role": "user",
+      "user_id":"thor",
+      "password":"thor",
+      "number_of_levels_completed": 0,
+      "register_date": "2024-10-02T14:30:00Z",
+      "interview_table": [
+        {
+          "userid": "thor",
+          "interview_table_id": "001",
+          "level_no": 1,
+          "level_name": "online_aptitude",
+          "status": "scheduled",
+          "scheduled_date_time": "2024-11-11T09:00:00Z"
+        }
+      ]
+
+    }
+  }
+  

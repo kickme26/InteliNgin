@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Typography } from 'antd'; // Import Typography from Ant Design
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
-import './CountdownTimer.css'; // Import CSS for the countdown timer
+import { Typography } from 'antd';
+import './CountdownTimer.css';
 
-const { Text } = Typography; // Use Text for labels and timer display
+const { Text } = Typography;
 
-const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState(300); // Set initial countdown time to 5 minutes (300 seconds)
-  const navigate = useNavigate(); // Initialize useNavigate for programmatic navigation
+const CountdownTimer = ({ initialTime, onTimeUp, isRunning }) => {
+  const [timeLeft, setTimeLeft] = useState(initialTime);
 
   useEffect(() => {
+    setTimeLeft(initialTime); // Reset time left when initialTime changes
+  }, [initialTime]);
+
+  useEffect(() => {
+    if (!isRunning) return; // Do not start the timer if not running
+
     const timer = setInterval(() => {
       setTimeLeft(prevTime => {
         if (prevTime <= 0) {
           clearInterval(timer);
-          navigate('/result'); // Redirect to /result page when time is up
+          onTimeUp(); // Call the onTimeUp function when time is up
           return 0;
         }
         return prevTime - 1;
@@ -22,16 +26,18 @@ const CountdownTimer = () => {
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup interval on component unmount
-  }, [navigate]);
+  }, [isRunning, onTimeUp]);
 
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60); // Correctly divide by 60 to get minutes
-    const secs = seconds % 60; // Get the remaining seconds
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
     return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
   };
 
+  const timerClass = timeLeft <= 120 ? 'countdown-timer-box red' : 'countdown-timer-box blue'; // Change class based on time left
+
   return (
-    <div className="countdown-timer-box">
+    <div className={timerClass}>
       <Text className="countdown-label">Time left:</Text>
       <Text className="countdown-time">{formatTime(timeLeft)}</Text>
     </div>

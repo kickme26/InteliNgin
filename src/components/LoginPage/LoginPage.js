@@ -12,7 +12,6 @@ const LoginPage = ({ setUsername }) => {
     const { username, password } = values;
 
     try {
-      //const response = await fetch("http://localhost:5000/api/login/login", {
       const response = await fetch(
         "http://superkingsoft.com/demo/crud_api/user.php?action=validateUser",
         {
@@ -27,21 +26,25 @@ const LoginPage = ({ setUsername }) => {
       const data = await response.json();
       console.log("data: " + JSON.stringify(data));
 
-      //if (response.ok) {
       if (data.message === "success") {
-        localStorage.setItem("username",data.username);
-        localStorage.setItem("role",data.role);
+        const userData = {
+          userid: data.id,
+          username: data.username,
+          role: data.role,
+        };
+
+        localStorage.setItem('userData', JSON.stringify(userData)); // Save user data to local storage
         setUsername(username, data.role);
+        
         if (data.role === "admin") {
           navigate("/admin");
         } else {
-          navigate(`/userhome/${encodeURIComponent(username)}`);
+          navigate(`/userhome/${data.id}`); // Use data.id directly
         }
-      }
-      else{
+      } else {
         alert("Invalid Username or Password");
       }
-    }  catch (error) {
+    } catch (error) {
       console.error('Login error:', error);
       message.error('An error occurred during login');
     } finally {
@@ -62,16 +65,14 @@ const LoginPage = ({ setUsername }) => {
           <Form.Item
             label="Username"
             name="username"
-            rules={[{ required: true, message: 'Please input your username!' }]}
-          >
+            rules={[{ required: true, message: 'Please input your username!' }]}>
             <Input />
           </Form.Item>
 
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-          >
+            rules={[{ required: true, message: 'Please input your password!' }]}>
             <Input.Password />
           </Form.Item>
 

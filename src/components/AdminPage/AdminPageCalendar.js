@@ -4,35 +4,35 @@ import { Calendar, Badge } from 'antd';
 const AdminPageCalendar = ({ users, onDateChange }) => {
   const getListData = (value) => {
     const selectedDate = value.format('YYYY-MM-DD');
-    
-    // Initialize counters
-    let registeredCount = 0;
-    let selectedCount = 0;
-    let rejectedCount = 0;
 
-    // Count users based on registered_date and is_selected
+    // Initialize counters
+    let scheduledCount = 0;
+    let l1Count = 0;
+    let l2Count = 0;
+
+    // Count users based on scheduled_time and interview_level_name
     users.forEach(user => {
-      const registeredDate = user.registered_date.split('T')[0]; // Extract date part
-      if (registeredDate === selectedDate) {
-        registeredCount++;
-        if (user.is_selected) {
-          selectedCount++;
-        } else {
-          rejectedCount++;
+      const scheduledDate = user.scheduled_time ? user.scheduled_time.split(' ')[0] : null;
+      if (scheduledDate === selectedDate) {
+        scheduledCount++;
+        if (user.interview_level_name === 'L1') {
+          l1Count++;
+        } else if (user.interview_level_name === 'L2') {
+          l2Count++;
         }
       }
     });
 
     // Create a list to return, only including counts that are greater than zero
     const listData = [];
-    if (selectedCount > 0) {
-      listData.push({ type: 'success', content: `Selected: ${selectedCount}` });
+    if (scheduledCount > 0) {
+      listData.push({ type: 'success', content: `Scheduled: ${scheduledCount}` });
     }
-    if (registeredCount > 0) {
-      listData.push({ type: 'warning', content: `Registered: ${registeredCount}` });
+    if (l1Count > 0) {
+      listData.push({ type: 'warning', content: `L1 Count: ${l1Count}` });
     }
-    if (rejectedCount > 0) {
-      listData.push({ type: 'error', content: `Rejected: ${rejectedCount}` });
+    if (l2Count > 0) {
+      listData.push({ type: 'error', content: `L2 Count: ${l2Count}` });
     }
 
     return listData;
@@ -52,13 +52,17 @@ const AdminPageCalendar = ({ users, onDateChange }) => {
   };
 
   const onSelect = (date) => {
-    onDateChange(date); // Call the date change function
+    onDateChange(date);
   };
+
+  // Custom header to remove MonthYear display
+  const monthCellRender = () => null; // Hide month header
 
   return (
     <Calendar 
       dateCellRender={dateCellRender} 
-      onSelect={onSelect} // Handle date selection
+      onSelect={onSelect} 
+      monthCellRender={monthCellRender} // Use custom month cell render
     />
   );
 };

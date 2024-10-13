@@ -1,3 +1,5 @@
+/* FinishButton.css */
+
 .linearGradientButton {
     border-width: 0;
     position: relative;
@@ -28,4 +30,16 @@
 .ant-btn-primary {
     border-radius: 4px; /* Optional: round corners */
     color: #fff; /* Ensure text color is white by default */
+    width: auto !important; /* Override width to be auto */
+    height: 45px;
+    background-color: #1677ff;
+    border-color: #8b3d0f;
+}
+
+.ant-modal-footer .ant-btn {
+    width: auto !important; /* Override width for modal buttons */
+}
+
+.ant-modal-footer .ant-btn-primary {
+    /* Add any additional styling for the primary button if needed */
 }

@@ -51,15 +51,25 @@
   margin-bottom: 10px; /* Space between radio buttons */
 }
 
-
 .question-title {
-  font-size: 16px; /* Slightly smaller font size for the title */
+  font-size: 14px; /* Adjusted for smaller title */
   font-weight: bold;
   color: black;
 }
+.question-cards {
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For IE/Edge */
+}
+
+.navigation-buttons {
+  padding: 20px;
+}
 
 .question-body {
-  font-size: 1rem;
+  font-size: 8rem; /* Adjusted for smaller body text */
   color: #333;
   margin-top: 0.5rem;
 }
+

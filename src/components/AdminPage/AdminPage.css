@@ -7,86 +7,48 @@
     background-color: #f9f9f9; /* Light background for content area */
 }
 
-.admin-table-container {
+/* Scrollable content */
+.scrollable-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 150px); /* Adjust for cards height */
+}
+
+/* Card styles */
+.ant-card {
+    margin-bottom: 20px; /* Space between cards */
+}
+
+/* Calendar container styles */
+.calendar-container {
+    margin: 16px 0; /* Margin between calendar and table */
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-width: 100%;
-    margin-top: 20px; /* Margin between cards and table */
+    justify-content: center;
 }
 
-.table-scroll {
-    overflow-x: auto; /* Enables horizontal scrolling */
+/* Table styles */
+.table-responsive {
+    margin-left: 10px; /* Space between calendar and table */
 }
 
-.admin-table-container .ant-table {
+.ant-table {
     border-radius: 4px;
     background: #ffffff; /* White background for tables */
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.admin-table-container .ant-table-pagination {
-    display: flex;
-    justify-content: center;
-}
-
-/* Table header styles */
-.ant-table-thead > tr > th {
-    background: #e6f7ff; /* Light blue background for headers */
-    color: #333; /* Dark text for headers */
-    font-weight: bold;
-    text-align: left; /* Align text to the left */
-    padding: 12px; /* Add padding for header cells */
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
-}
-
-/* Optional: set a minimum width for the columns */
-.admin-table-container .ant-table th,
-.admin-table-container .ant-table td {
-    min-width: 120px; /* Adjust as needed */
-}
-
-/* Add specific widths for each column */
-.admin-table-container .ant-table th.name {
-    width: 150px; /* Adjusted for name column */
-}
-
-.admin-table-container .ant-table th.phone_number {
-    width: 150px; /* Adjusted for phone number column */
-}
-
-.admin-table-container .ant-table th.email {
-    width: 200px; /* Adjusted for email column */
-}
-
 /* Row styles */
-.admin-table-tbody > tr:nth-child(even) {
+.ant-table-tbody > tr:nth-child(even) {
     background-color: #f2f7f9; /* Very light background for even rows */
 }
 
-.admin-table-tbody > tr:hover {
+.ant-table-tbody > tr:hover {
     background-color: #d1ecf1; /* Light blue background on hover */
 }
 
-.admin-table-tbody > tr > td {
+.ant-table-tbody > tr > td {
     padding: 12px; /* Increase padding for table cells */
     border-bottom: 1px solid #e8e8e8; /* Add bottom border to cells */
-}
-
-/* Calendar container styles */
-.calendar-container {
-    margin: 20px 0; /* Margin between calendar and table */
-    overflow: auto; /* Allow scrolling if needed */
-    display: flex; /* Optional: use flexbox for alignment */
-    justify-content: flex-start; /* Align to the start */
-}
-
-.ant-calendar {
-    width: 100%; /* Make the calendar responsive */
-    max-width: 100%; /* Ensure it doesn't overflow */
 }
 
 /* Header styles */
@@ -106,3 +68,29 @@
 .ant-btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
+.layout-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 64px - 48px); /* Adjust for header and footer height */
+    background-color: #f9f9f9; /* Light background for content area */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.calendar-container {
+    margin-top: 16px; /* Margin above the calendar */
+    overflow: auto; /* Allow scrolling if needed */
+}
+.ant-card {
+  transition: transform 0.2s;
+}
+
+
+.ant-card:hover {
+  transform: scale(1.05); /* Slightly increase the card size on hover */
+}
+
+/* Other CSS styles remain the same as provided previously */

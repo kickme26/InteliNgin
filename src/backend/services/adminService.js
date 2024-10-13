@@ -15,7 +15,7 @@ const fetchAdminData = () => {
   try {
     console.log('Attempting to read data from the file...'); // Debug: Before reading the file
     const data = fs.readFileSync(filePath, 'utf-8');
-    console.log('Data read from file:', data); // Debug: Log raw data
+    //console.log('Data read from file:', data); // Debug: Log raw data
     return JSON.parse(data); // Parse JSON data from the file
   } catch (error) {
     console.error('Error reading data from registeredusers.json:', error);

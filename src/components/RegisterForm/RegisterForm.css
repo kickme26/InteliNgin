@@ -12,10 +12,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0 10%; /* 10% gap on left and right */
+  padding: 0 15%; /* 15% gap on left and right */
   overflow: hidden; /* Hide overflow to avoid scrollbars on the container */
   background-color: #f5f5f5; /* Light background for contrast */
 }
+
 /* Background for the floating balls */
 .auth-bg {
   position: absolute;
@@ -34,7 +35,7 @@
 .auth-bg .r:nth-child(1) { width: 300px; height: 300px; top: -100px; right: -100px; background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%); animation: floating 7s infinite; }
 .auth-bg .r:nth-child(2) { width: 150px; height: 150px; top: 114px; right: 115px; background: #04a9f5; animation: floating 8s infinite; }
 .auth-bg .r:nth-child(3) { width: 100px; height: 100px; left: 259px; bottom: 400px; background: #1de9b6; animation: floating 6s infinite; }
-.auth-bg .r:nth-child(4) { width: 250px; height: 250px; left: 450px; bottom: 205px; background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%); animation: floating 5s infinite; }
+.auth-bg .r:nth-child(4) { width: 250px; height: 250px; left: 161px; bottom: 35px; background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%); animation: floating 5s infinite; }
 
 @keyframes floating {
   0% { transform: translate(0, 0); }
@@ -49,7 +50,7 @@
   padding: 40px;
   backdrop-filter: blur(15px);
   border-radius: 12px;
-  width: 400px;
+  width: 500px; /* Increased width */
   max-width: 100%;
   max-height: 80vh; /* Limit the height of the form */
   overflow-y: auto; /* Add vertical scrolling */
@@ -59,11 +60,6 @@
   flex-direction: column;
   gap: 20px; /* Space between form items */
   text-align: left;
-}
-
-/* Removed box shadows */
-.register-page {
-  box-shadow: none;
 }
 
 /* Added padding for form inputs */
@@ -105,18 +101,19 @@
   border-color: #0050b3;
 }
 
-/* Center the form in the container */
-.register-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
 h3.mb-4 {
   margin-bottom: 20px;
   font-size: 1.5rem;
   color: #333;
   text-align: center;
 }
+/* Custom button class */
+.custom-login-button {
+  height: 45px; /* Maintain height */
+  background-color: #1677ff; /* Use primary button color */
+  border-color: #8b3d0f; /* Border color */
+  width: auto; /* Allow the button to size based on content */
+  padding: 10px 20px; /* Adjust padding as necessary */
+}
+
+

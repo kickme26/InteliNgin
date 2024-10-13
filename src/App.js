@@ -46,11 +46,12 @@ function App() {
              }
            />
           <Route path="/register" element={<RegisterForm />} />
+          <Route path="/register/:jobId" element={<RegisterForm />} />
           <Route path="/registersuccess" element={<RegisterSuccessful />} />
           <Route path="/userhome/:name" element={<UserHomePage role={role} />} />
           <Route path="/result" element={<ResultPage />} />
-          <Route path="/chat" element={<ChatPage onLogout={handleLogout} />} />
-          <Route path="/test" element={<LayoutComponent onLogout={handleLogout} />} />
+          <Route path="/chat/:name/:interviewId" element={<ChatPage />} />
+          <Route path="/test/:userid/:interviewId" element={<LayoutComponent onLogout={handleLogout} />} />
           
           {/* <Route path="/user/:userId" element={<UserDetails />} /> */}
           <Route path="/admin" element={username && role === 'admin' ? <AdminPage onLogout={handleLogout} /> : <Navigate to="/login" replace />} />

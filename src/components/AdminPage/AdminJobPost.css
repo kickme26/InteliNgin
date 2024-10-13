@@ -1,42 +1,122 @@
 .admin-jobpost-page {
     padding: 20px;
-}
-
-.create-job-button {
-    float: right;
+  }
+  
+  .content-container {
+    background-color: #f7f7f7; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .create-job-card {
     margin-bottom: 20px;
-}
-
-.jobpost-grid {
-    margin-top: 20px;
-}
-
-.job-card {
-    border: 1px solid #ddd;
-    padding: 16px;
-    background-color: #fff;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.recent-users {
-    margin-top: 20px;
-    border-radius: 0;
-    box-shadow: 0 1px 20px rgba(69, 90, 100, 0.08);
-    border: none;
-}
-
-.card-header {
-    background: #f5f5f5;
-    padding: 10px;
-}
-
-.table-responsive {
-    width: 100%;
+  }
+  
+  .jobpost-scroll {
+    display: flex;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.table {
-    color: #212529;
-}
+    gap: 16px;
+    padding: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  .job-card {
+    min-width: 200px;
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .job-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .job-role,
+  .applied-count {
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+  }
+  
+  .job-card:hover .job-role,
+  .job-card:hover .applied-count {
+    transform: scale(1.1);
+    font-weight: bold;
+  }
+  
+  .create-job-card {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .create-job-button {
+    width: auto;
+    height: 45px;
+    padding: 0 16px;
+  }
+  
+  /* Override Ant Design button styles specifically for this button */
+  .create-job-button.ant-btn-primary {
+    width: auto; /* Remove the 100% width */
+    background-color: #1677ff; /* Custom background color */
+    border-color: #8b3d0f; /* Custom border color */
+  }
+  .portal-title {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 8px; /* Space below the title */
+  }
+  
+  .portal-description {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #555; /* A subtle color for the description */
+    margin-bottom: 16px; /* Space below the description */
+  }
+  .text-content {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 16px; /* Space below the text */
+  }
+  
+  .button-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: flex-end; /* Align button to the right */
+  }
+  .create-job-card {
+    padding: 16px; /* Add padding inside the card */
+    margin: 10px; /* Add margin around the card for spacing */
+    background-color: #ffffff; /* Ensure background is white */
+    border-radius: 8px; /* Slightly round corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  }
+  
+  .text-content {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 16px; /* Space below the text */
+  }
+  
+  .button-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: flex-start; /* Align button to the left */
+  }
+  .create-job-card {
+    padding: 16px; /* Padding inside the card */
+    margin: 10px; /* Margin around the card */
+    background-color: #ffffff; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack text and button vertically */
+  }
+  
+  .text-content {
+    text-align: left; /* Left-align text */
+    margin-bottom: 16px; /* Space below text */
+  }
+  
+  .button-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: flex-end; /* Align button to the right */
+  }
+  

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button, Result, Space, Input, QRCode } from 'antd';
 import { useLocation } from 'react-router-dom';
-
+import './RegisterForm.css';
 const RegisterSuccessful = () => {
   const location = useLocation();
   const { username, password } = location.state || { username: '', password: '' };
@@ -19,9 +19,9 @@ const RegisterSuccessful = () => {
         <QRCode value={`Username: ${username}, Password: ${password}`} />
         <Input placeholder="Scan the QR code above" maxLength={60} value={`Username: ${username}, Password: ${password}`} readOnly />
       </Space>
-      <Button type="primary" onClick={() => window.location.href = '/login'}>
-        Go to Login
-      </Button>
+      <Button type="primary"  onClick={() => window.location.href = '/login'}>
+  Go to Login
+</Button>
     </div>
   );
 };

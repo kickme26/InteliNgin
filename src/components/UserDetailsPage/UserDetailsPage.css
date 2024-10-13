@@ -34,4 +34,122 @@
     border-color: #8b3d0f;
 
   }
+  .interview-card {
+    color: white; /* Text color for better visibility */
+    padding: 16px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .card-0 {
+    background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+  }
+  
+  .card-1 {
+    background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
+  }
+  
+  .card-2 {
+    background: #1de9b6;
+  }
+  
+  .card-3 {
+    background: #04a9f5;
+  }
+  .interview-card {
+    display: flex; /* Ensure it behaves like a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 150px; /* Adjust height for smaller size */
+    padding: 12px; /* Reduce padding */
+    border-radius: 8px; /* Rounded corners */
+    color: white; /* Text color for better visibility */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+    text-align: center; /* Center text */
+  }
+  
+  /* Add hover effect */
+  .interview-card:hover {
+    transform: scale(1.05); /* Scale up slightly */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  .card-0 {
+    background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+  }
+  
+  .card-1 {
+    background: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
+  }
+  
+  .card-2 {
+    background: #1de9b6;
+  }
+  
+  .card-3 {
+    background: #04a9f5;
+  }
+ 
+  .final-round-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .final-round-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px; /* Reduced padding for smaller height */
+    border: 2px solid #007bff; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(0, 123, 255, 0.1));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .final-round-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4); /* Shadow effect */
+  }
+  
+  .final-round-title {
+    font-weight: bold;
+    font-size: 14px; /* Slightly smaller font size */
+    color: #007bff; /* Color for the title */
+  }
+  
+  .heartbeat {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+    margin-right: 10px;
+  }
+  
+  @keyframes heartbeat {
+    0%, 20%, 50%, 80%, 100% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .dropdown-trigger {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  .dropdown-trigger:hover {
+    transform: scale(1.1);
+    color: #007bff; /* Change color on hover */
+  }
+  
+ 
+  .dropdown-trigger {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  .dropdown-trigger:hover {
+    transform: scale(1.1);
+  }
   

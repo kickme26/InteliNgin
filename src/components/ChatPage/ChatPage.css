@@ -6,7 +6,7 @@
 }
 
 .body {
-  background-color: beige;
+  background-color: #f0f2f5; /* Changed to a light, tech-friendly color */
 }
 
 .layout-content {
@@ -14,39 +14,37 @@
   display: flex;
   height: calc(100vh - 64px - 48px); /* Adjust for header and footer height */
   position: relative;
+ 
 }
 
-.chat-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 45%;
-  height: 100%;
-  background-image: url('../../assets/images/w2.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
-
+/* AI-themed floating effect */
 .floating-ball {
   position: absolute;
   border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
 }
 
 .floating-ball.large {
-  width: 230px;
-  height: 250px;
-  top: -120px;
-  left: -120px;
-  background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+  width: 250px;
+  height: 270px;
+  top: -130px;
+  left: -130px;
+  background: linear-gradient(135deg, #1de9b6 0%, #1dc4e9 100%);
 }
 
 .floating-ball.small {
-  width: 62px;
-  height: 62px;
-  bottom: 462px;
-  left: 8px;
+  width: 70px;
+  height: 70px;
+  bottom: 450px;
+  left: 30px;
   background: #04a9f5;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(0); }
 }
 
 .chat-container {
@@ -63,89 +61,42 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 12px;
-  background: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent for a tech feel */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .chat-message {
   max-width: 60%;
-  padding: 12px;
-  border-radius: 15px;
+  padding: 14px;
+  border-radius: 18px;
   position: relative;
   word-wrap: break-word;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .user-message {
   align-self: flex-end;
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: white;
   text-align: right;
   margin-left: auto;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .system-message {
   align-self: flex-start;
-  background: #e1e1e1;
+  background: linear-gradient(135deg, #e1e1e1 0%, #b0b0b0 100%);
   color: #333;
   text-align: left;
   margin-right: auto;
-  margin-bottom: 15px;
-}
-/* Typing indicator */
-.typing-indicator {
-  align-self: flex-start; /* Align like system message */
-  padding: 8px 12px;
-  background: #e1e1e1;
-  border-radius: 15px;
-  max-width: 30%; /* Same width constraint as system-message */
-  word-wrap: break-word;
-  text-align: left;
-  margin-right: auto;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
-.typing-indicator .text {
-  margin-right: 5px;
-}
-
-.typing-indicator .dots {
-  display: inline-flex;
-}
-
-.typing-indicator .dot {
-  width: 8px;
-  height: 8px;
-  margin: 0 2px;
-  background: #333;
-  border-radius: 50%;
-  animation: blink 1.4s infinite both;
-}
-
-.typing-indicator .dot:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.typing-indicator .dot:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0.2;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.2;
-  }
-}
-
+/* Improved Finish Button Styling */
 .chat-input-container {
   display: flex;
   align-items: center;
@@ -154,27 +105,353 @@
   border-top: 1px solid #ddd;
   background: #fff;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.chat-send-button, .chat-finish-button {
+  min-width: 120px; /* Wider and more prominent button */
+  height: 48px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  transition: transform 0.2s;
+}
+
+.chat-send-button:hover, .chat-finish-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+}
+
+.chat-finish-button {
+  background: linear-gradient(135deg, #ff4d4f 0%, #d32f2f 100%);
+  min-width: 150px; /* Increase the width for emphasis */
+  margin-top: 10px;
+}
+
+.chat-finish-button:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+}
+
+/* Typing indicator improvement */
+.typing-indicator {
+  align-self: flex-start;
+  padding: 10px 15px;
+  background: #e1e1e1;
+  border-radius: 20px;
+  max-width: 40%;
+  word-wrap: break-word;
+  text-align: left;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/* Decreased width for the send button */
+.chat-send-button {
+  min-width: 80px; /* Reduced the button width */
+  height: 45px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 15px; /* Adjusted padding for a more compact look */
+  transition: transform 0.2s;
+}
+
+.chat-send-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+}
+
+/* Girl image placeholder styling */
+.chat-profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('https://via.placeholder.com/50x50.png?text=Girl'); /* Placeholder image URL */
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.chat-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background-image: url('../../assets/images/w2.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.chat-message-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.chat-message .system-message .chat-profile-image {
+  align-self: flex-start;
+}
+
+.typing-indicator .dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  background: #007bff;
+  animation: blink 1.2s infinite both;
+}
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
 }
 
 .chat-input {
-  flex: 1;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 10px;
-  background: #fff;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex: 1; /* 70% of width */
 }
 
 .chat-send-button {
-  width: auto !important; /* Ensure it doesn't take 100% width */
-  min-width: 100px; /* Set a minimum width */
+  flex: 0 0 30%; /* 30% of width */
   height: 45px;
-  background-color: #007bff; /* Custom background */
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: white;
   border: none;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.chat-send-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+}
+.layout-header {
+  display: flex;
+  justify-content: space-between; /* Ensure items are spaced out */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add horizontal padding */
+  height: 64px; /* Ensure it matches the default Ant Design header height */
+  background-color: #fff; /* Change to your desired background color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.header-item {
+  margin: 0 10px; /* Add some margin between items */
+}
+
+.header-label-text {
+  font-size: 18px; /* Adjust font size if necessary */
+  font-weight: bold; /* Optional: make it bold */
+}
+/* General reset */
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: #f0f2f5; /* Changed to a light, tech-friendly color */
+}
+
+.layout-content {
+  padding: 20px;
+  display: flex;
+  height: calc(100vh - 64px - 48px); /* Adjust for header and footer height */
+  position: relative;
+}
+
+/* AI-themed floating effect */
+.floating-ball {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-ball.large {
+  width: 250px;
+  height: 270px;
+  top: -130px;
+  left: -130px;
+  background: linear-gradient(135deg, #1de9b6 0%, #1dc4e9 100%);
+}
+
+.floating-ball.small {
+  width: 70px;
+  height: 70px;
+  bottom: 450px;
+  left: 30px;
+  background: #04a9f5;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(0); }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  margin-left: 30%;
+  z-index: 2;
+}
+
+.chat-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent for a tech feel */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.chat-message {
+  max-width: 60%;
+  padding: 14px;
+  border-radius: 18px;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.user-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  text-align: right;
+  margin-left: auto;
+  margin-bottom: 18px;
+}
+
+.system-message {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #e1e1e1 0%, #b0b0b0 100%);
+  color: #333;
+  text-align: left;
+  margin-right: auto;
+  margin-bottom: 18px;
+}
+
+/* Improved Finish Button Styling */
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.chat-send-button, .chat-finish-button {
+  min-width: 120px; /* Wider and more prominent button */
+  height: 48px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   padding: 0 20px;
+  transition: transform 0.2s;
+}
+
+.chat-send-button:hover, .chat-finish-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0056b3 0%, #003d7a 100%);
+}
+
+.chat-finish-button {
+  background: linear-gradient(135deg, #ff4d4f 0%, #d32f2f 100%);
+  min-width: 150px; /* Increase the width for emphasis */
+  margin-top: 10px;
+}
+
+.chat-finish-button:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+}
+
+/* Typing indicator improvement */
+.typing-indicator {
+  align-self: flex-start;
+  padding: 10px 15px;
+  background: #e1e1e1;
+  border-radius: 20px;
+  max-width: 40%;
+  word-wrap: break-word;
+  text-align: left;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+/* Digital Clock Styling */
+.digital-clock {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Adjust font size if necessary */
+  color: #333; /* Color for the clock */
+}
+
+.time-box {
+  padding: 0 5px;
+  font-weight: bold; /* Optional: make it bold */
+}
+
+/* Other styles remain unchanged */
+.layout-header {
+  display: flex;
+  justify-content: space-between; /* Ensure items are spaced out */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add horizontal padding */
+  height: 64px; /* Ensure it matches the default Ant Design header height */
+  background-color: #fff; /* Change to your desired background color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.header-item {
+  margin: 0 10px; /* Add some margin between items */
+}
+
+.header-label-text {
+  font-size: 18px; /* Adjust font size if necessary */
+  font-weight: bold; /* Optional: make it bold */
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
+.timer-box {
+  border: 2px solid #007bff; /* Adjust border color */
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(0, 123, 255, 0.1); /* Light background for better visibility */
+  margin-left: 10px;
+}
+
+.timer-text {
+  font-weight: bold; /* Makes the timer text bold */
+  font-size: 1.5em; /* Adjusts the font size for better visibility */
+  color: #007bff; /* Adjust text color */
 }
