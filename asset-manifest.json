@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/InteliNgin/static/css/main.afc1fbd8.css",
+    "main.js": "/InteliNgin/static/js/main.75261707.js",
+    "static/js/453.b4ddef96.chunk.js": "/InteliNgin/static/js/453.b4ddef96.chunk.js",
+    "static/media/w2.png": "/InteliNgin/static/media/w2.fa1cf7ef07baf13c3f7d.png",
+    "static/media/f.png": "/InteliNgin/static/media/f.0ad534154a8bd3afb443.png",
+    "static/media/g.png": "/InteliNgin/static/media/g.2a4920c2fc18dca68a95.png",
+    "static/media/b.png": "/InteliNgin/static/media/b.a05022d34e2c096225cc.png",
+    "static/media/c.png": "/InteliNgin/static/media/c.c4e61e093db0627aecea.png",
+    "static/media/e.png": "/InteliNgin/static/media/e.cb010e23ef3d4b73f9d5.png",
+    "static/media/a.png": "/InteliNgin/static/media/a.35bc9e7f480c44e51297.png",
+    "static/media/gamer.png": "/InteliNgin/static/media/gamer.3c37a790f9676542b372.png",
+    "static/media/woman.png": "/InteliNgin/static/media/woman.39acfdd8c10d32e77dc7.png",
+    "static/media/panda.png": "/InteliNgin/static/media/panda.0253ba0e4ab6e6b77c68.png",
+    "static/media/d.png": "/InteliNgin/static/media/d.1786541488ec2645a0cf.png",
+    "index.html": "/InteliNgin/index.html",
+    "main.afc1fbd8.css.map": "/InteliNgin/static/css/main.afc1fbd8.css.map",
+    "main.75261707.js.map": "/InteliNgin/static/js/main.75261707.js.map",
+    "453.b4ddef96.chunk.js.map": "/InteliNgin/static/js/453.b4ddef96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afc1fbd8.css",
+    "static/js/main.75261707.js"
+  ]
+}
