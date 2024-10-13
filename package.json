@@ -1,5 +1,6 @@
 {
   "name": "cbotapp",
+  "homepage": "https://kickme26.github.io/InteliNgin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
