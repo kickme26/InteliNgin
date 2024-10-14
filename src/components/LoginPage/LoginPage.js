@@ -13,7 +13,7 @@ const LoginPage = ({ setUsername }) => {
 
     try {
       const response = await fetch(
-        "http://superkingsoft.com/demo/crud_api/user.php?action=validateUser",
+        "superkingsoft.com/demo/crud_api/user.php?action=validateUser",
         {
           method: "POST",
           headers: {
